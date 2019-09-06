@@ -88,7 +88,7 @@ public class FCRunnerTask
         Objects.requireNonNull(taskMonitor, "Task monitor cannot be null");
 
         // Give the task a title
-        taskMonitor.setTitle("Signal Flow Analysis");
+        taskMonitor.setTitle("Feedback Vertex Set Control");
 
         // Flag that the results are not clean
         hasCleanResults = false;

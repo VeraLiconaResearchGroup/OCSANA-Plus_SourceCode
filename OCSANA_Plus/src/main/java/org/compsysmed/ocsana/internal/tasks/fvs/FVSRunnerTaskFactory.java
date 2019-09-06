@@ -26,7 +26,6 @@ import org.compsysmed.ocsana.internal.util.fc.FCBundle;
 import org.compsysmed.ocsana.internal.util.fvs.FVSBundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFABundle;
 import org.compsysmed.ocsana.internal.ui.fc.FCResultsPanel;
-import org.compsysmed.ocsana.internal.ui.fvs.FVSResultsPanel;
 import org.compsysmed.ocsana.internal.ui.results.OCSANAResultsPanel;
 import org.compsysmed.ocsana.internal.ui.sfaresults.SFAResultsPanel;
 
@@ -35,8 +34,8 @@ import org.compsysmed.ocsana.internal.ui.sfaresults.SFAResultsPanel;
  **/
 public class FVSRunnerTaskFactory extends AbstractTaskFactory {
     private TaskManager<?, ?> taskManager;
-    private FVSBundle fvsBundle;
-    private FVSResultsPanel fvsresultsPanel;
+    private FCBundle fcBundle;
+    private FCResultsPanel fcresultsPanel;
 
     /**
      * Constructor
@@ -46,24 +45,24 @@ public class FVSRunnerTaskFactory extends AbstractTaskFactory {
      * @param resultsPanel  the panel to display the results
      **/
     public FVSRunnerTaskFactory (TaskManager<?, ?> taskManager,
-    							FVSBundle fvsBundle,
-    							FVSResultsPanel fvsresultsPanel) {
+    							FCBundle fcBundle,
+    							FCResultsPanel fcresultsPanel) {
         super();
 
         Objects.requireNonNull(taskManager, "Task manager cannot be null");
         this.taskManager = taskManager;
 
-        Objects.requireNonNull(fvsBundle, "Context bundle cannot be null");
-        this.fvsBundle = fvsBundle;
+        Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
+        this.fcBundle = fcBundle;
 
-        Objects.requireNonNull(fvsresultsPanel, "Results panel cannot be null");
-        this.fvsresultsPanel = fvsresultsPanel;
+        Objects.requireNonNull(fcresultsPanel, "Results panel cannot be null");
+        this.fcresultsPanel = fcresultsPanel;
     }
 
     @Override
     public TaskIterator createTaskIterator () {
         TaskIterator tasks = new TaskIterator();
-        tasks.append(new FVSRunnerTask(taskManager, fvsBundle, fvsresultsPanel));
+        tasks.append(new FVSRunnerTask(taskManager, fcBundle, fcresultsPanel));
         return tasks;
     }
 }

@@ -27,26 +27,25 @@ import org.compsysmed.ocsana.internal.util.context.ContextBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCResultsBundle;
 import org.compsysmed.ocsana.internal.util.fvs.FVSBundle;
-import org.compsysmed.ocsana.internal.util.fvs.FVSResultsBundle;
 import org.compsysmed.ocsana.internal.util.results.ResultsBundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFAResultsBundle;
 
 public class FVSAlgorithmTaskFactory
     extends AbstractTaskFactory {
     private final FVSRunnerTask fvsRunnerTask;
-    private final FVSBundle fvsBundle;
-    private final FVSResultsBundle fvsresultsBundle;
+    private final FCBundle fcBundle;
+    private final FCResultsBundle fvsresultsBundle;
 
     public  FVSAlgorithmTaskFactory (FVSRunnerTask fvsRunnerTask, 
-                                            FVSBundle fvsBundle,
-                                            FVSResultsBundle fvsresultsBundle) {
+                                            FCBundle fcBundle,
+                                            FCResultsBundle fvsresultsBundle) {
         super();
 
         Objects.requireNonNull(fvsRunnerTask, "Runner task cannot be null");
         this.fvsRunnerTask = fvsRunnerTask;
 
-        Objects.requireNonNull(fvsBundle, "Context bundle cannot be null");
-        this.fvsBundle = fvsBundle;
+        Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
+        this.fcBundle = fcBundle;
 
         Objects.requireNonNull(fvsresultsBundle, "Context results cannot be null");
         this.fvsresultsBundle = fvsresultsBundle;
@@ -57,7 +56,7 @@ public class FVSAlgorithmTaskFactory
     @Override
     public TaskIterator createTaskIterator () {
         TaskIterator tasks = new TaskIterator();
-        tasks.append(new FVSAlgorithmTask(fvsRunnerTask, fvsBundle, fvsresultsBundle));
+        tasks.append(new FVSAlgorithmTask(fvsRunnerTask, fcBundle, fvsresultsBundle));
         return tasks;
     }
 }

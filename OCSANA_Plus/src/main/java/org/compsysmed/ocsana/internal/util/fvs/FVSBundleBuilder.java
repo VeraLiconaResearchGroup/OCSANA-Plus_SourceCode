@@ -17,6 +17,7 @@ import java.util.*;
 // Cytoscape imports
 import org.cytoscape.model.CyNetwork;
 import org.cytoscape.model.CyNode;
+import org.compsysmed.ocsana.internal.util.fc.FCBundle;
 // OCSANA imports
 import org.compsysmed.ocsana.internal.util.tunables.NodeHandler;
 import org.compsysmed.ocsana.internal.algorithms.fc.AbstractFCAlgorithm;
@@ -34,7 +35,7 @@ import org.compsysmed.ocsana.internal.algorithms.fc.FC;
 public class FVSBundleBuilder {
     private final CyNetwork network;
 
-
+    private final Boolean sourcenodes;
     private AbstractFCAlgorithm FCalgorithm;
     private NodeHandler nodeHandler;
     
@@ -44,6 +45,7 @@ public class FVSBundleBuilder {
 
         setNodeHandler(new NodeHandler(network));
         FCalgorithm= new FC(network);
+        sourcenodes = false;
 
     }
 
@@ -77,8 +79,8 @@ public class FVSBundleBuilder {
     /**
      * Return the context as currently configured
      **/
-    public FVSBundle getFVSBundle () {
-        return new FVSBundle(network, nodeHandler, FCalgorithm);
+    public FCBundle getFCBundle () {
+        return new FCBundle(network, nodeHandler, FCalgorithm,sourcenodes);
     }
 
 }

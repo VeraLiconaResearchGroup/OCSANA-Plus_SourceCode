@@ -12,6 +12,7 @@ public class FCResultsBundle {
 	
     // FC data
     private String FC;
+    private String FVS;
     private Double FCExecutionSeconds;
     private Boolean FCCanceled = false;
     
@@ -37,5 +38,15 @@ public class FCResultsBundle {
 
     public void setFCWasCanceled () {
        FCCanceled = true;
+    }
+
+    public String getFVS () {
+        return FVS;
+    }
+   
+    public void setFVS (String FVS) {
+
+		Objects.requireNonNull(FVS, "Collection of MFRs to targets cannot be null");
+    this.FVS = FVS;
     }
 }

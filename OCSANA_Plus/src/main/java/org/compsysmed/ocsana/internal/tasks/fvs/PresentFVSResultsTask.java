@@ -10,12 +10,10 @@ import org.compsysmed.ocsana.internal.tasks.FCStep;
 import org.compsysmed.ocsana.internal.tasks.FVSStep;
 import org.compsysmed.ocsana.internal.tasks.SFAStep;
 import org.compsysmed.ocsana.internal.ui.fc.FCResultsPanel;
-import org.compsysmed.ocsana.internal.ui.fvs.FVSResultsPanel;
 import org.compsysmed.ocsana.internal.ui.sfaresults.SFAResultsPanel;
 import org.compsysmed.ocsana.internal.util.fc.FCBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCResultsBundle;
 import org.compsysmed.ocsana.internal.util.fvs.FVSBundle;
-import org.compsysmed.ocsana.internal.util.fvs.FVSResultsBundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFABundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFAResultsBundle;
 import org.cytoscape.work.TaskMonitor;
@@ -24,27 +22,27 @@ extends AbstractFVSTask {
 private static final FVSStep algStep = FVSStep.PRESENT_FVS_RESULTS;
 
 	private final FVSRunnerTask fvsrunnerTask;
-	private final FVSBundle fvsBundle;
-	private final FVSResultsBundle fvsresultsBundle;
-	private final FVSResultsPanel fvsresultsPanel;
+	private final FCBundle fcBundle;
+	private final FCResultsBundle fvsresultsBundle;
+	private final FCResultsPanel fcresultsPanel;
 
 public PresentFVSResultsTask (FVSRunnerTask fvsrunnerTask,
-		FVSBundle fvsBundle,
-		FVSResultsBundle fvsresultsBundle,
-		FVSResultsPanel fvsresultsPanel) {
-    super(fvsBundle.getNetwork());
+		FCBundle fcBundle,
+		FCResultsBundle fvsresultsBundle,
+		FCResultsPanel fcresultsPanel) {
+    super(fcBundle.getNetwork());
 
     Objects.requireNonNull(fvsrunnerTask, "Runner task cannot be null");
     this.fvsrunnerTask = fvsrunnerTask;
 
-    Objects.requireNonNull(fvsBundle, "Context bundle cannot be null");
-    this.fvsBundle = fvsBundle;
+    Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
+    this.fcBundle = fcBundle;
 
     Objects.requireNonNull(fvsresultsBundle, "Context results cannot be null");
     this.fvsresultsBundle = fvsresultsBundle;
 
-    Objects.requireNonNull(fvsresultsPanel, "Results panel cannot be null");
-    this.fvsresultsPanel = fvsresultsPanel;
+    Objects.requireNonNull(fcresultsPanel, "Results panel cannot be null");
+    this.fcresultsPanel = fcresultsPanel;
 }
 
 @Override
@@ -55,7 +53,7 @@ public void run (TaskMonitor taskMonitor) {
 
     taskMonitor.setStatusMessage("Generating results report.");
 
-    fvsresultsPanel.update(fvsBundle, fvsresultsBundle);
+    fcresultsPanel.update(fcBundle, fvsresultsBundle);
 }
 
 @Override

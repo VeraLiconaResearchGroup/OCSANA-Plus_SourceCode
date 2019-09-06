@@ -31,14 +31,14 @@ import org.compsysmed.ocsana.internal.tasks.results.PresentResultsTaskFactory;
 import org.compsysmed.ocsana.internal.tasks.scoring.OCSANAScoringTaskFactory;
 import org.compsysmed.ocsana.internal.tasks.fc.FCAlgorithmTaskFactory;
 import org.compsysmed.ocsana.internal.util.context.ContextBundle;
+import org.compsysmed.ocsana.internal.util.fc.FCBundle;
+import org.compsysmed.ocsana.internal.util.fc.FCResultsBundle;
 import org.compsysmed.ocsana.internal.util.fvs.FVSBundle;
-import org.compsysmed.ocsana.internal.util.fvs.FVSResultsBundle;
-import org.compsysmed.ocsana.internal.util.fvs.FVSResultsBundle;
+
 import org.compsysmed.ocsana.internal.util.results.ResultsBundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFABundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFAResultsBundle;
 import org.compsysmed.ocsana.internal.ui.fc.FCResultsPanel;
-import org.compsysmed.ocsana.internal.ui.fvs.FVSResultsPanel;
 import org.compsysmed.ocsana.internal.ui.results.OCSANAResultsPanel;
 import org.compsysmed.ocsana.internal.ui.sfaresults.SFAResultsPanel;
 
@@ -55,9 +55,9 @@ public class FVSRunnerTask
     extends AbstractNetworkTask
     implements TaskObserver, ObservableTask {
     private final TaskManager<?, ?> taskManager;
-    private final FVSBundle fvsBundle;
-    private final FVSResultsBundle fvsresultsBundle;
-    private final FVSResultsPanel fvsresultsPanel;
+    private final FCBundle fcBundle;
+    private final FCResultsBundle fvsresultsBundle;
+    private final FCResultsPanel fcresultsPanel;
 
     private Boolean hasCleanResults = true;
 
@@ -69,20 +69,20 @@ public class FVSRunnerTask
      * @param resultsPanel  the panel to display the results
      **/
     public FVSRunnerTask (TaskManager<?, ?> taskManager,
-    					FVSBundle fvsBundle,
-    					FVSResultsPanel fvsresultsPanel) {
-        super( fvsBundle.getNetwork());
+    					FCBundle fcBundle,
+    					FCResultsPanel fcresultsPanel) {
+        super( fcBundle.getNetwork());
 
         Objects.requireNonNull(taskManager, "Task manager cannot be null");
         this.taskManager = taskManager;
 
-        Objects.requireNonNull( fvsBundle, "Context bundle cannot be null");
-        this. fvsBundle =  fvsBundle;
+        Objects.requireNonNull( fcBundle, "Context bundle cannot be null");
+        this. fcBundle =  fcBundle;
 
-        Objects.requireNonNull(fvsresultsPanel, "Results panel cannot be null");
-        this.fvsresultsPanel = fvsresultsPanel;
+        Objects.requireNonNull(fcresultsPanel, "Results panel cannot be null");
+        this.fcresultsPanel = fcresultsPanel;
 
-        this.fvsresultsBundle = new FVSResultsBundle();
+        this.fvsresultsBundle = new FCResultsBundle();
     }
 
     @Override
@@ -90,7 +90,7 @@ public class FVSRunnerTask
         Objects.requireNonNull(taskMonitor, "Task monitor cannot be null");
 
         // Give the task a title
-        taskMonitor.setTitle("Signal Flow Analysis");
+        taskMonitor.setTitle("Feedback Vertex Set Control");
 
         // Flag that the results are not clean
         hasCleanResults = false;
@@ -103,14 +103,14 @@ public class FVSRunnerTask
 
     private void spawnFVSTask () {
         FVSAlgorithmTaskFactory FVSTaskFactory =
-            new FVSAlgorithmTaskFactory(this, fvsBundle, fvsresultsBundle);
+            new FVSAlgorithmTaskFactory(this, fcBundle, fvsresultsBundle);
         
         taskManager.execute(FVSTaskFactory.createTaskIterator(), this);
     }
     
     private void spawnPresentFVSResultsTask () {
         PresentResultsFVSTaskFactory presentResultsFVSTaskFactory =
-            new PresentResultsFVSTaskFactory(this, fvsBundle, fvsresultsBundle, fvsresultsPanel);
+            new PresentResultsFVSTaskFactory(this, fcBundle, fvsresultsBundle, fcresultsPanel);
 
         taskManager.execute(presentResultsFVSTaskFactory.createTaskIterator(), this);
     }
@@ -118,7 +118,7 @@ public class FVSRunnerTask
         // Flag that the results are clean
         hasCleanResults = true;
 
-        fvsBundle.uncancelAll();
+        fcBundle.uncancelAll();
     }
     @Override
     @SuppressWarnings("unchecked")

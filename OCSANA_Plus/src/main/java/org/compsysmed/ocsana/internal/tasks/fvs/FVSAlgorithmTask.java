@@ -33,7 +33,6 @@ import org.compsysmed.ocsana.internal.util.context.ContextBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCResultsBundle;
 import org.compsysmed.ocsana.internal.util.fvs.FVSBundle;
-import org.compsysmed.ocsana.internal.util.fvs.FVSResultsBundle;
 import org.compsysmed.ocsana.internal.util.results.ResultsBundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFABundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFAResultsBundle;
@@ -42,23 +41,23 @@ import org.compsysmed.ocsana.internal.util.tunables.NodeHandler;
 public class FVSAlgorithmTask extends AbstractFVSTask {
 	private static final FVSStep algStep = FVSStep.DO_FVS;
 	private final FVSRunnerTask fvsrunnerTask;
-    private final FVSBundle fvsBundle;
-    private final FVSResultsBundle fvsresultsBundle;
+    private final FCBundle fcBundle;
+    private final FCResultsBundle fcresultsBundle;
     private List<CyNode> FVS;
 
     public FVSAlgorithmTask (FVSRunnerTask fvsrunnerTask,
-				    		FVSBundle fvsBundle,
-				    		FVSResultsBundle fvsresultsBundle) {
-        super(fvsBundle.getNetwork());
+				    		FCBundle fcBundle,
+				    		FCResultsBundle fcresultsBundle) {
+        super(fcBundle.getNetwork());
 
         Objects.requireNonNull(fvsrunnerTask, "Runner task cannot be null");
         this.fvsrunnerTask = fvsrunnerTask;
 
-        Objects.requireNonNull(fvsBundle, "Context bundle cannot be null");
-        this.fvsBundle = fvsBundle;
+        Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
+        this.fcBundle = fcBundle;
 
-        Objects.requireNonNull(fvsresultsBundle, "Context results cannot be null");
-        this.fvsresultsBundle = fvsresultsBundle;
+        Objects.requireNonNull(fcresultsBundle, "Context results cannot be null");
+        this.fcresultsBundle = fcresultsBundle;
 
     }
 
@@ -77,7 +76,7 @@ public class FVSAlgorithmTask extends AbstractFVSTask {
         Long preTime = System.nanoTime();
         
         taskMonitor.setTitle(String.format("running FC"));
-        Map<String, List<CyNode>> FC = fvsBundle.getFCAlgorithm().FVS();
+        Map<String, List<CyNode>> FC = fcBundle.getFCAlgorithm().FVS();
         taskMonitor.setTitle(String.format("formatting output"));
         FVS=FC.get("fvsnodes");
         //List<CyNode> sourcenodes = FC.get("sourcenodes");
@@ -92,12 +91,12 @@ public class FVSAlgorithmTask extends AbstractFVSTask {
         	FC_string = FC_string+"\nFVS_"+String.valueOf(i)+": ";
         	FVS=FC.get("FVS_"+String.valueOf(i));
         	for (CyNode node:FVS) {
-            	String nodename = fvsBundle.getNodeName(node);
+            	String nodename = fcBundle.getNodeName(node);
             	FC_string=FC_string+nodename+"\t";
             }
         }
         
-        fvsresultsBundle.setFC(FC_string);
+        fcresultsBundle.setFC(FC_string);
         taskMonitor.setTitle(String.format(FC.toString()));
         Long postTime = System.nanoTime();
 
@@ -126,8 +125,8 @@ public class FVSAlgorithmTask extends AbstractFVSTask {
     @Override
     public void cancel () {
         super.cancel();
-        fvsBundle.getFCAlgorithm().cancel();
-        fvsresultsBundle.setFCWasCanceled();
+        fcBundle.getFCAlgorithm().cancel();
+        fcresultsBundle.setFCWasCanceled();
         fvsrunnerTask.cancel();
     }
 }

@@ -39,10 +39,10 @@ public final class FCBundle {
 
     private final AbstractFCAlgorithm FCalgorithm;
     private final NodeHandler nodeHandler;
-
+    private final Boolean sourcenodes;
     public FCBundle (CyNetwork network,
     				NodeHandler nodeHandler,
-    				AbstractFCAlgorithm FCalgorithm) {
+    				AbstractFCAlgorithm FCalgorithm, Boolean sourcenodes) {
         // Assignments
         Objects.requireNonNull(network, "Network cannot be null");
         this.network = network;
@@ -52,6 +52,9 @@ public final class FCBundle {
 
         Objects.requireNonNull(nodeHandler, "Node name handler cannot be null");
         this.nodeHandler = nodeHandler;
+        Objects.requireNonNull(sourcenodes, "Node name handler cannot be null");
+        this.sourcenodes = sourcenodes;
+        
 
     }
 

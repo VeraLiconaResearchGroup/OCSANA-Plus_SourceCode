@@ -48,7 +48,6 @@ import org.osgi.framework.BundleContext;
 import org.compsysmed.ocsana.internal.ui.control.OCSANAControlPanel;
 import org.compsysmed.ocsana.internal.ui.fc.FCResultsPanel;
 import org.compsysmed.ocsana.internal.ui.fc.FCmenu;
-import org.compsysmed.ocsana.internal.ui.fvs.FVSResultsPanel;
 import org.compsysmed.ocsana.internal.ui.fvs.FVSmenu;
 import org.compsysmed.ocsana.internal.ui.results.OCSANAResultsPanel;
 
@@ -85,21 +84,17 @@ public class CyActivator extends AbstractCyActivator {
         FCmenu fcmenu = new FCmenu(cyApplicationManager,cySwingApplication,fcresultsPanel,panelTaskManager);	
         	registerService(bc,fcmenu,CyAction.class, new Properties());
         
-        FVSResultsPanel fvsresultsPanel =
-                    new FVSResultsPanel(cySwingApplication);
-                registerService(bc, fvsresultsPanel, CytoPanelComponent.class, new Properties());
-        FVSmenu fvsmenu = new FVSmenu(cyApplicationManager,cySwingApplication,fvsresultsPanel,panelTaskManager);	
+        
+        FVSmenu fvsmenu = new FVSmenu(cyApplicationManager,cySwingApplication,fcresultsPanel,panelTaskManager);	
         	registerService(bc,fvsmenu,CyAction.class, new Properties());
        
-        	SFAResultsPanel sfaresultsPanel =
+       SFAResultsPanel sfaresultsPanel =
                 new SFAResultsPanel(cySwingApplication);
             registerService(bc, sfaresultsPanel, CytoPanelComponent.class, new Properties());
         
         SFAmenu sfamenu = new SFAmenu(cyApplicationManager,cySwingApplication,sfaresultsPanel,panelTaskManager);	
         	registerService(bc,sfamenu,CyAction.class, new Properties());
-    	
-        
-    	
+	
         
     }
     

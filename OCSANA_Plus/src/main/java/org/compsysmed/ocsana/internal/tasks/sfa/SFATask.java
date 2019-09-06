@@ -97,6 +97,18 @@ public class SFATask extends AbstractSFATask{
 			 sfastring=sfastring+node+": "+String.valueOf(xval)+"\n";
         }
         sfaresultsBundle.setSFA(sfastring);
+        
+        String configstring = "Activated Nodes: ";
+        for (CyNode node : actNodes) {
+        	String name = sfaBundle.getNodeName(node);
+        	configstring=configstring+"\n"+name;
+        }
+        configstring=configstring+"\nInhibited Nodes";
+        for (CyNode node : inhNodes) {
+        	String name = sfaBundle.getNodeName(node);
+        	configstring=configstring+"\n"+name;
+        }
+        sfaresultsBundle.setSFAconfig(configstring);
         taskMonitor.showMessage(TaskMonitor.Level.INFO, String.format("Found paths in %fs.",  runTime));
         
         //taskMonitor.showMessage(TaskMonitor.Level.INFO, sfastring);
@@ -121,7 +133,7 @@ public class SFATask extends AbstractSFATask{
 	        if (type.isAssignableFrom(SFAStep.class)) {
 	            return (T) algStep;
 	        } else {
-	        	throw new IllegalArgumentException("Invalid results type for FVS");
+	        	throw new IllegalArgumentException("Invalid results type for SFA");
 	        }
 	    }
     

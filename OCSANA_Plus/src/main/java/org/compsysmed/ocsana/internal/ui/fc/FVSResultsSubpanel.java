@@ -1,4 +1,4 @@
-package org.compsysmed.ocsana.internal.ui.fvs;
+package org.compsysmed.ocsana.internal.ui.fc;
 //Java imports
 import java.util.*;
 import java.awt.BorderLayout;
@@ -16,7 +16,6 @@ import org.compsysmed.ocsana.internal.util.context.ContextBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCResultsBundle;
 import org.compsysmed.ocsana.internal.util.fvs.FVSBundle;
-import org.compsysmed.ocsana.internal.util.fvs.FVSResultsBundle;
 import org.compsysmed.ocsana.internal.util.results.ResultsBundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFABundle;
 import org.compsysmed.ocsana.internal.util.sfa.SFAResultsBundle;
@@ -25,13 +24,13 @@ public class FVSResultsSubpanel
 	extends JPanel {
 		public FVSResultsSubpanel (
 		                   FVSBundle fvsBundle,
-		                   FVSResultsBundle fvsresultsBundle,
+		                   FCResultsBundle fcresultsBundle,
 		                   PathType pathType) {
 		    String FC;
 		   
 
 
-		    FC = fvsresultsBundle.getFC();
+		    FC = fcresultsBundle.getFVS();
 		    if (FC != null) {    
 		        // Create panel
 		        JTextArea pathTextArea = new JTextArea(String.join("\n", FC));

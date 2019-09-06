@@ -13,6 +13,7 @@ import org.compsysmed.ocsana.internal.tasks.fc.FCRunnerTaskFactory;
 import org.compsysmed.ocsana.internal.tasks.fvs.FVSRunnerTaskFactory;
 import org.compsysmed.ocsana.internal.tasks.sfa.SFARunnerTaskFactory;
 import org.compsysmed.ocsana.internal.tasks.sfa.SFATaskFactory;
+import org.compsysmed.ocsana.internal.ui.fc.FCResultsPanel;
 import org.compsysmed.ocsana.internal.ui.fc.subpanels.FCNetworkConfigurationSubpanel;
 import org.compsysmed.ocsana.internal.ui.fvs.subpanels.FVSNetworkConfigurationSubpanel;
 import org.compsysmed.ocsana.internal.ui.results.OCSANAResultsPanel;
@@ -42,20 +43,20 @@ implements SetCurrentNetworkListener{
     private FVSBundleBuilder fvsBundleBuilder;
     
     //UI
-    private FVSResultsPanel fvsresultsPanel;
+    private FCResultsPanel fcresultsPanel;
     private final PanelTaskManager panelTaskManager;
 	private CyApplicationManager cyApplicationManager;
 
 	FVSwindow(CyApplicationManager cyApplicationManager,
-            FVSResultsPanel fvsresultsPanel, PanelTaskManager panelTaskManager)  
+            FCResultsPanel fcresultsPanel, PanelTaskManager panelTaskManager)  
         {  
 		super();
 
         Objects.requireNonNull(cyApplicationManager, "Cytoscape application manager cannot be null");
         this.cyApplicationManager = cyApplicationManager;
 
-        Objects.requireNonNull(fvsresultsPanel, "Results panel cannot be null");
-        this.fvsresultsPanel = fvsresultsPanel;
+        Objects.requireNonNull(fcresultsPanel, "Results panel cannot be null");
+        this.fcresultsPanel = fcresultsPanel;
 
         Objects.requireNonNull(panelTaskManager, "Panel task manager cannot be null");
         this.panelTaskManager = panelTaskManager;
@@ -121,9 +122,9 @@ implements SetCurrentNetworkListener{
      * Retrieve the ContextBundle corresponding to the current
      * settings in the UI
      **/
-    public FVSBundle getFVSBundle () {
+    public FCBundle getFVSBundle () {
         updateFVSBundleBuilder();
-        return fvsBundleBuilder.getFVSBundle();
+        return fvsBundleBuilder.getFCBundle();
     }
     
 	
@@ -150,7 +151,7 @@ implements SetCurrentNetworkListener{
      * Launch the task
      **/
     private void runTask () {
-    	FVSRunnerTaskFactory fvsRunnerTaskFactory= new FVSRunnerTaskFactory(panelTaskManager,getFVSBundle(), fvsresultsPanel);
+    	FVSRunnerTaskFactory fvsRunnerTaskFactory= new FVSRunnerTaskFactory(panelTaskManager,getFVSBundle(), fcresultsPanel);
         panelTaskManager.execute(fvsRunnerTaskFactory.createTaskIterator());
     }
 

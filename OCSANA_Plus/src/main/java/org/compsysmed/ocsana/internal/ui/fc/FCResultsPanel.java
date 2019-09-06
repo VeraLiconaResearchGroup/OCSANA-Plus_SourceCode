@@ -44,6 +44,7 @@ import org.cytoscape.application.swing.CytoPanelState;
 import org.compsysmed.ocsana.internal.util.context.ContextBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCBundle;
 import org.compsysmed.ocsana.internal.util.fc.FCResultsBundle;
+import org.compsysmed.ocsana.internal.util.fvs.FVSBundle;
 import org.compsysmed.ocsana.internal.util.results.ResultsBundle;
 
 import org.compsysmed.ocsana.internal.util.results.ResultsReportManager;
@@ -61,6 +62,7 @@ public class FCResultsPanel
     private final CytoPanel cyResultsPanel;
 
     private FCBundle fcBundle;
+    private FVSBundle fvsBundle;
     private FCResultsBundle fcresultsBundle;
 
     private ResultsReportManager resultsReportManager = new ResultsReportManager();
@@ -93,13 +95,17 @@ public class FCResultsPanel
      **/
     public void update (FCBundle fcBundle,
                         FCResultsBundle fcresultsBundle) {
-        Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
+    	//Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
+    	if (Objects.nonNull(fcBundle)){
         this.fcBundle = fcBundle;
-
-        Objects.requireNonNull(fcresultsBundle, "Context results cannot be null");
+    	}
+       
+        //Objects.requireNonNull(fcresultsBundle, "Context results cannot be null");
+        if (Objects.nonNull(fcresultsBundle)){
         this.fcresultsBundle = fcresultsBundle;
-
-        //resultsReportManager.update2(sfaBundle, sfaresultsBundle);
+        }
+        //Objects.requireNonNull(fvsresultsBundle, "Context results cannot be null");
+       
 
         rebuildPanels();
     }
@@ -134,78 +140,6 @@ public class FCResultsPanel
     }
 
     /**
-     * Build the operations panel
-     *
-     * This is the part of the results panel with buttons and other
-     * user operations
-     **/
-   /* private JPanel getOperationsPanel () {
-        buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
-
-        JButton showReportButton = new JButton("Show report");
-        buttonPanel.add(showReportButton);
-        showReportButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed (ActionEvent e) {
-                    showResultsReport();
-                }
-            });
-
-        JButton saveReportButton = new JButton("Save report");
-        buttonPanel.add(saveReportButton);
-
-        saveReportButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed (ActionEvent event) {
-                    saveResultsReport();
-                }
-            });
-
-
-        getRootPane().setDefaultButton(showReportButton);
-
-        return buttonPanel;
-    }*/
-
-    /**
-     * Show the CI results report in a dialog
-     **/
-  /*  private void showResultsReport () {
-        JTextPane reportTextPane = new JTextPane();
-        reportTextPane.setContentType("text/html");
-        reportTextPane.setEditable(false);
-        reportTextPane.setCaretPosition(0); // Show top of file initially
-
-        String reportText = resultsReportManager.reportAsHTML();
-        reportTextPane.setText(reportText);
-
-        JScrollPane reportPane = new JScrollPane(reportTextPane);
-        JOptionPane.showMessageDialog(this, reportPane, "SFA report", JOptionPane.PLAIN_MESSAGE);
-    }*/
-
-    /**
-     * Let the user save the results report
-     **/
-    /*private void saveResultsReport () {
-        JFileChooser fileChooser = new JFileChooser();
-        if (fileChooser.showSaveDialog(buttonPanel) == JFileChooser.APPROVE_OPTION) {
-            File outFile = fileChooser.getSelectedFile();
-            try (BufferedWriter fileWriter =
-                 new BufferedWriter(new OutputStreamWriter(new FileOutputStream(outFile), StandardCharsets.UTF_8))) {
-                String reportText = resultsReportManager.reportAsText();
-                fileWriter.write(reportText);
-            } catch (IOException exception) {
-                String message = "Could not save to " + outFile.toString() + "\n" + exception;
-                JOptionPane.showMessageDialog(buttonPanel,
-                                              message,
-                                              "Error",
-                                              JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }
-*/
-    /**
      * Build the results panel
      *
      * This is the panel that displays the results of whatever OCSANA
@@ -213,32 +147,22 @@ public class FCResultsPanel
      **/
     private JPanel getFCResultsPanel () {
         JPanel fcresultsPanel = new JPanel(new BorderLayout());
-
-        if (fcresultsBundle == null) {
-            return fcresultsPanel;
-        }
+        //if (fcresultsBundle == null && fvsresultsBundle == null) {
+            //return fcresultsPanel;
+       // }
 
         JTabbedPane resultsTabbedPane = new JTabbedPane();
         fcresultsPanel.add(resultsTabbedPane, BorderLayout.CENTER);
         fcresultsPanel.setBorder(null);
 
-        /*if (resultsBundle.getCIs() != null) {
-            CIListSubpanel ciSubpanel = new CIListSubpanel(contextBundle, resultsBundle, cySwingApplication.getJFrame());
-            resultsTabbedPane.addTab("Optimal CIs", ciSubpanel);
+        
+        if (fcresultsBundle.getFVS() != null) {
+        	FVSResultsSubpanel FVSSubpanel = new FVSResultsSubpanel(fvsBundle, fcresultsBundle, PathsSubpanel.PathType.TO_TARGETS);
+            resultsTabbedPane.addTab("Feedback Vertex Set Control Nodes",FVSSubpanel);
         }
-
-        if (resultsBundle.getPathsToTargets() != null) {
-            PathsSubpanel targetPathsSubpanel = new PathsSubpanel(contextBundle, resultsBundle, PathsSubpanel.PathType.TO_TARGETS);
-            resultsTabbedPane.addTab("Paths to targets", targetPathsSubpanel);
-        }
-
-        if (resultsBundle.getPathsToOffTargets() != null) {
-            PathsSubpanel targetPathsSubpanel = new PathsSubpanel(contextBundle, resultsBundle, PathsSubpanel.PathType.TO_OFF_TARGETS);
-            resultsTabbedPane.addTab("Paths to Off-targets", targetPathsSubpanel);
-        }*/
         if (fcresultsBundle.getFC() != null) {
         	FCResultsSubpanel FCSubpanel = new FCResultsSubpanel(fcBundle, fcresultsBundle, PathsSubpanel.PathType.TO_OFF_TARGETS);
-            resultsTabbedPane.addTab("FC with source nodes",FCSubpanel);
+            resultsTabbedPane.addTab("Feedback Vertex Set Control Nodes",FCSubpanel);
         }
 
         return fcresultsPanel;
@@ -266,7 +190,7 @@ public class FCResultsPanel
      */
     @Override
     public String getTitle() {
-        return "FC with source nodes";
+        return "FC";
     }
 
     /**

@@ -32,7 +32,8 @@ import org.compsysmed.ocsana.internal.algorithms.fc.FC;
  * FCBundle should be used once configuration is complete.
  **/
 public class FCBundleBuilder {
-    private final CyNetwork network;
+    private final Boolean sourcenodes;
+	private final CyNetwork network;
 
 
     private AbstractFCAlgorithm FCalgorithm;
@@ -44,6 +45,7 @@ public class FCBundleBuilder {
 
         setNodeHandler(new NodeHandler(network));
         FCalgorithm= new FC(network);
+        sourcenodes = false;
 
     }
 
@@ -78,7 +80,7 @@ public class FCBundleBuilder {
      * Return the context as currently configured
      **/
     public FCBundle getFCBundle () {
-        return new FCBundle(network, nodeHandler, FCalgorithm);
+        return new FCBundle(network, nodeHandler, FCalgorithm,sourcenodes);
     }
 
 }
