@@ -234,6 +234,11 @@ public class SFAResultsPanel
             PathsSubpanel targetPathsSubpanel = new PathsSubpanel(contextBundle, resultsBundle, PathsSubpanel.PathType.TO_OFF_TARGETS);
             resultsTabbedPane.addTab("Paths to Off-targets", targetPathsSubpanel);
         }*/
+        if (sfaresultsBundle.getSFAconfig() != null) {
+        	SFAConfigSubpanel SFAConfigSubpanel = new SFAConfigSubpanel(sfaBundle, sfaresultsBundle, PathsSubpanel.PathType.TO_TARGETS);
+            resultsTabbedPane.addTab("SFA Config",SFAConfigSubpanel);
+        }
+
         if (sfaresultsBundle.getSFA() != null) {
         	SFAResultsSubpanel SFASubpanel = new SFAResultsSubpanel(sfaBundle, sfaresultsBundle, PathsSubpanel.PathType.TO_OFF_TARGETS);
             resultsTabbedPane.addTab("SFA",SFASubpanel);

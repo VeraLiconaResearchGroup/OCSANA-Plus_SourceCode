@@ -14,6 +14,7 @@ public class SFAResultsBundle {
     private String SFA;
     private Double SFAExecutionSeconds;
     private Boolean SFACanceled = false;
+    private String SFAconfig;
     
     public String getSFA () {
         return SFA;
@@ -21,9 +22,19 @@ public class SFAResultsBundle {
    
     public void setSFA (String SFA) {
 
-		Objects.requireNonNull(SFA, "Collection of MFRs to targets cannot be null");
+		Objects.requireNonNull(SFA, "SFA results cannot be null");
     this.SFA = SFA;
     }
+    
+    public String getSFAconfig() {
+		return SFAconfig;
+	}
+    public void setSFAconfig (String SFAconfig) {
+
+		Objects.requireNonNull(SFAconfig, "SFA configuration cannot be null");
+    this.SFAconfig = SFAconfig;
+    }
+    
     public Double getSFAExecutionSeconds () {
         return SFAExecutionSeconds;
     }
@@ -38,4 +49,6 @@ public class SFAResultsBundle {
     public void setSFAWasCanceled () {
        SFACanceled = true;
     }
+
+	
 }
