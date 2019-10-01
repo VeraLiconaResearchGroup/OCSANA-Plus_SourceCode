@@ -113,7 +113,7 @@ public class NetworkConfigurationSubpanel
         // Edge processor
         JPanel edgepanel= new JPanel();
         edgepanel.setLayout(new BoxLayout(edgepanel,BoxLayout.Y_AXIS));
-        JLabel edgehead= new JLabel("Note: For Edge direction, please include");
+        JLabel edgehead= new JLabel("Note: For Edge sign, please include");
         JLabel edgetext2= new JLabel("an \"interaction\" column that specifies positive");
         JLabel edgetext3= new JLabel("edges as \"activates\" and negative edges as \"inhibits\".");
         JLabel edgetext4= new JLabel("Otherwise, all edges will be considered positive.");
