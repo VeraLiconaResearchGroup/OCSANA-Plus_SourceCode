@@ -25,7 +25,6 @@ import org.compsysmed.ocsana.internal.ui.sfa.subpanels.AbstractSFAwindow;
 import org.compsysmed.ocsana.internal.algorithms.fc.AbstractFCAlgorithm;
 import org.compsysmed.ocsana.internal.algorithms.fc.FC;
 import org.compsysmed.ocsana.internal.algorithms.mhs.AbstractMHSAlgorithm;
-import org.compsysmed.ocsana.internal.algorithms.mhs.MMCSAlgorithm;
 import org.compsysmed.ocsana.internal.algorithms.path.AbstractPathFindingAlgorithm;
 import org.compsysmed.ocsana.internal.algorithms.path.AllNonSelfIntersectingPathsAlgorithm;
 import org.compsysmed.ocsana.internal.algorithms.path.ShortestPathsAlgorithm;

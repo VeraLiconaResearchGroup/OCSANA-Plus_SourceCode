@@ -22,7 +22,7 @@ import org.cytoscape.model.CyNode;
 import org.compsysmed.ocsana.internal.util.tunables.NodeHandler;
 
 import org.compsysmed.ocsana.internal.algorithms.mhs.AbstractMHSAlgorithm;
-import org.compsysmed.ocsana.internal.algorithms.mhs.MMCSAlgorithm;
+import org.compsysmed.ocsana.internal.algorithms.mhs.RSAlgorithm;
 import org.compsysmed.ocsana.internal.algorithms.fc.FC;
 import org.compsysmed.ocsana.internal.algorithms.path.AbstractPathFindingAlgorithm;
 import org.compsysmed.ocsana.internal.algorithms.path.AllNonSelfIntersectingPathsAlgorithm;
@@ -62,7 +62,7 @@ public class ContextBundleBuilder {
         setIncludeEndpointsInCIs(false);
 
         setPathFindingAlgorithm(new AllNonSelfIntersectingPathsAlgorithm(network));
-        setMHSAlgorithm(new MMCSAlgorithm());
+        setMHSAlgorithm(new RSAlgorithm());
         
 
     }

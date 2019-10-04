@@ -72,8 +72,8 @@ public class PathsSubpanel
     }
 
     public enum PathType {
-        TO_TARGETS("targets"),
-        TO_OFF_TARGETS("off-targets");
+        TO_TARGETS("Targets"),
+        TO_OFF_TARGETS("Off-targets");
 
         private final String pluralName;
 

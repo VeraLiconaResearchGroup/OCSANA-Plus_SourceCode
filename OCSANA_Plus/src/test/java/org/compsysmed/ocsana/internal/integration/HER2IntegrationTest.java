@@ -24,7 +24,7 @@ import org.compsysmed.ocsana.internal.algorithms.path.AbstractPathFindingAlgorit
 import org.compsysmed.ocsana.internal.algorithms.path.AllNonSelfIntersectingPathsAlgorithm;
 
 import org.compsysmed.ocsana.internal.algorithms.mhs.AbstractMHSAlgorithm;
-import org.compsysmed.ocsana.internal.algorithms.mhs.MMCSAlgorithm;
+import org.compsysmed.ocsana.internal.algorithms.mhs.RSAlgorithm;
 
 import org.compsysmed.ocsana.internal.helpers.SIFFileConverter;
 
@@ -94,7 +94,7 @@ public class HER2IntegrationTest {
             nodeSets.add(nodes);
         }
 
-        AbstractMHSAlgorithm mhsAlg = new MMCSAlgorithm();
+        AbstractMHSAlgorithm mhsAlg = new RSAlgorithm();
         Collection<Set<CyNode>> MHSes = mhsAlg.MHSes(nodeSets);
 
         assertEquals("CI count", 320, MHSes.size());

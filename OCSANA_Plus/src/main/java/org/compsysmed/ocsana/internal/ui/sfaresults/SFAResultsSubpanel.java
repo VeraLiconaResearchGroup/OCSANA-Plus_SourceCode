@@ -34,7 +34,7 @@ public class SFAResultsSubpanel
 		        JScrollPane pathScrollPane = new JScrollPane(pathTextArea);
 
 		        setLayout(new BorderLayout());
-		        String panelText = String.format("Signal Flow Analysis steady state values");
+		        String panelText = String.format("Signal Flow Analysis log Steady State Values");
 		        add(new JLabel(panelText), BorderLayout.PAGE_START);
 		        add(pathScrollPane, BorderLayout.CENTER);
 		    }

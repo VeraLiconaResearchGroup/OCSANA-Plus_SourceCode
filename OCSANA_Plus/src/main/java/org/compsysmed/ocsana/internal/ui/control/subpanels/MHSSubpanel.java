@@ -75,7 +75,7 @@ public class MHSSubpanel
         algSelectionPanel.add(new JLabel("Algorithm:"));
 
         List<AbstractMHSAlgorithm> algorithms = new ArrayList<>();
-        algorithms.add(new MMCSAlgorithm());
+        
         algorithms.add(new RSAlgorithm());
         algorithms.add(new BergeAlgorithm());
 

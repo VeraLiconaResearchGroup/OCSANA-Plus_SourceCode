@@ -16,21 +16,21 @@ import java.io.*;
 
 // OCSANA imports
 import org.compsysmed.ocsana.internal.algorithms.mhs.Hypergraph;
-import org.compsysmed.ocsana.internal.algorithms.mhs.MMCSAlgorithm;
+import org.compsysmed.ocsana.internal.algorithms.mhs.RSAlgorithm;
 
 public class MMCSAlgorithmTest {
-    MMCSAlgorithm algFull;
-    MMCSAlgorithm algCutoff;
+    RSAlgorithm algFull;
+    RSAlgorithm algCutoff;
     Hypergraph smallHypergraph;
 
     @Before
     public void setUp () {
         // Set up the test environment here
         // In particular, initialize any shared variables
-        algFull = new MMCSAlgorithm();
+        algFull = new RSAlgorithm();
         algFull.useMaxCardinality = false;
 
-        algCutoff = new MMCSAlgorithm();
+        algCutoff = new RSAlgorithm();
         algCutoff.useMaxCardinality = true;
         algCutoff.maxCardinalityBInt.setValue(6);
 
