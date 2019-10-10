@@ -1,0 +1,7 @@
+Source Nodes: 3_SLP	2_SLP	1_SLP	0_SLP	
+FVS_1: 3_PTC	3_wg	2_PTC	2_wg	1_PTC	1_wg	1_hh	3_hh	0_PTC	0_wg	
+FVS_2: 3_PTC	3_wg	2_PTC	2_wg	2_hh	1_PTC	1_wg	0_PTC	0_hh	0_wg	
+FVS_3: 3_PTC	3_wg	2_PTC	2_wg	2_hh	1_PTC	1_wg	0_PTC	0_CIR	0_wg	
+FVS_4: 3_PTC	3_wg	2_PTC	2_wg	1_PTC	1_CIR	1_wg	3_hh	0_PTC	0_wg	
+FVS_5: 3_PTC	3_wg	2_PTC	2_CIR	2_wg	1_PTC	1_wg	0_PTC	0_hh	0_wg	
+FVS_6: 3_PTC	3_wg	2_PTC	2_CIR	2_wg	1_PTC	1_wg	0_PTC	0_CIR	0_wg
