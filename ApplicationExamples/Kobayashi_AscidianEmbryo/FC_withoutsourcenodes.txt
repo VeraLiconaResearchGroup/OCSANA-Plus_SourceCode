@@ -1,0 +1,18 @@
+Source Nodes not computed
+FVS_1: Twist-r.a/b	Erk_signalling	Delta.b	Zic-r.b	Foxa.a	
+FVS_2: Erk_signalling	Delta.b	Zic-r.b	Foxd	Nodal	
+FVS_3: Twist-r.a/b	Erk_signalling	Neurog	Zic-r.b	Foxa.a	
+FVS_4: Erk_signalling	Delta.b	Zic-r.b	Foxd	Foxa.a	
+FVS_5: Twist-r.a/b	Erk_signalling	Delta.b	Zic-r.b	Foxa.a	Otx	Nodal	
+FVS_6: Erk_signalling	Neurog	Zic-r.b	Foxd	Nodal	
+FVS_7: Erk_signalling	Neurog	Zic-r.b	Foxd	Foxa.a	
+FVS_8: Erk_signalling	Delta.b	Zic-r.b	Foxd	Foxa.a	Otx	Nodal	
+FVS_9: Twist-r.a/b	Erk_signalling	Delta.b	Zic-r.b	Otx	Nodal	
+FVS_10: Erk_signalling	Neurog	Zic-r.b	Foxd	Otx	Nodal	
+FVS_11: Twist-r.a/b	Erk_signalling	Neurog	Zic-r.b	Nodal	
+FVS_12: Twist-r.a/b	Erk_signalling	Neurog	Zic-r.b	Otx	Nodal	
+FVS_13: Twist-r.a/b	Erk_signalling	Neurog	Zic-r.b	Foxa.a	Otx	Nodal	
+FVS_14: Erk_signalling	Delta.b	Zic-r.b	Foxd	Otx	Nodal	
+FVS_15: Twist-r.a/b	Erk_signalling	Delta.b	Zic-r.b	Nodal	
+FVS_16: Snail	Twist-r.a/b	Erk_signalling	Delta.b	Zic-r.b	
+FVS_17: Snail	Erk_signalling	Delta.b	Zic-r.b	Foxd	

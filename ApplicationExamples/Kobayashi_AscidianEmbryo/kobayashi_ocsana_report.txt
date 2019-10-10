@@ -1,0 +1,117 @@
+--- Optimal cut sets report ---
+Network name: kobayashi.sif
+Node names from column: shared name
+
+Source nodes:
+Ctnnb, Pem1, Sox4/11/12, Tp53.a, Tp53.b, Gata.a, Gdf1/3-r, Hes.a
+
+Target nodes:
+Epi1
+
+Off-target nodes:
+
+
+Path-finding algorithm: All non-self-intersecting paths (max path length: 20)
+Found 59 elementary paths.
+
+Search times: 0.024502894s. for targets, 1.35139E-4s. for off-targets.
+
+Paths to target nodes:
+Gata.a -> Epi1
+Ctnnb -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Delta.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Delta.b -| Fgf8/17/18 -> Erk signalling -| Epi1
+Ctnnb -> Foxa.a -| Delta.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -| Delta.b -| Fgf8/17/18 -> Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Hand-r -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Hand-r -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Foxa.a -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Ctnnb -> Fgf9/16/20 -> Erk signalling -| Epi1
+Ctnnb -| Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Delta.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Delta.b -| Fgf8/17/18 -> Erk signalling -| Epi1
+Pem1 -| Foxa.a -| Delta.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -| Delta.b -| Fgf8/17/18 -> Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Hand-r -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Hand-r -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Foxa.a -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Fgf9/16/20 -> Erk signalling -| Epi1
+Pem1 -| Admp -> Fgf8/17/18 -> Erk signalling -| Epi1
+Pem1 -| Admp -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Admp -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Admp -| Otx -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Pem1 -| Admp -| Otx -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Sox4/11/12 -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Sox4/11/12 -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Sox4/11/12 -| Fgf8/17/18 -> Erk signalling -| Epi1
+Sox4/11/12 -| Delta.b -> Efna.d -| Erk signalling -| Epi1
+Sox4/11/12 -| Delta.b -| Fgf8/17/18 -> Erk signalling -| Epi1
+Gata.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Gata.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Gata.a -> Efna.d -| Erk signalling -| Epi1
+Gdf1/3-r -| Otx -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Gdf1/3-r -| Otx -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Gdf1/3-r -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Gdf1/3-r -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Delta.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Delta.b -| Fgf8/17/18 -> Erk signalling -| Epi1
+Hes.a -| Foxa.a -| Delta.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -| Delta.b -| Fgf8/17/18 -> Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Hand-r -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Hand-r -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -| Nodal -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Otx -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Twist-r.a/b -> Foxd -| Prdm1 -r.a -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+Hes.a -| Foxa.a -> Twist-r.a/b -> Foxd -| Prdm1-r.b -> Efna.d -| Erk signalling -| Epi1
+
+No paths to off-target nodes found.
+
+Scoring algorithm: OCSANA scoring
+Computed OCSANA scores in 0.001785886s.
+
+
+MHS algorithm: MMCS algorithm (max CI size: 6; all cores)
+Found 27 CIs in 0.020499193s.
+
+Scoring data for all CIs:
+Cut set	Size	OCSANA score	Target-Score side-effectscore
+[Erk signalling, Gata.a]	2	3369.2619047619046 -56.68452380952381	0.0
+[Ctnnb, Pem1, Sox4/11/12, Gata.a, Gdf1/3-r, Hes.a]	6	28.809126984126983 1.0896825396825398	0.0
+[Ctnnb, Twist-r.a/b, Pem1, Sox4/11/12, Gata.a, Hes.a]	6	50.26626984126986 0.4539682539682536	0.0
+[Ctnnb, Pem1, Sox4/11/12, Prdm1-r.b, Gata.a, Hes.a]	6	509.99960317460335 13.720634920634925	0.0
+[Ctnnb, Foxd, Pem1, Sox4/11/12, Gata.a, Hes.a]	6	64.76626984126985 0.10396825396825393	0.0
+[Ctnnb, Efna.d, Pem1, Sox4/11/12, Gata.a, Hes.a]	6	1133.1662698412697 24.553968253968254	0.0
+[Ctnnb, Twist-r.a/b, Pem1, Sox4/11/12, Delta.b, Gata.a]	6	115.21865079365081 5.088888888888888	0.0
+[Ctnnb, Pem1, Sox4/11/12, Prdm1-r.b, Delta.b, Gata.a]	6	574.9519841269843 18.35555555555556	0.0
+[Ctnnb, Foxd, Pem1, Sox4/11/12, Delta.b, Gata.a]	6	129.7186507936508 4.738888888888888	0.0
+[Ctnnb, Efna.d, Pem1, Sox4/11/12, Delta.b, Gata.a]	6	1198.1186507936507 29.18888888888889	0.0
+[Ctnnb, Efna.d, Pem1, Fgf8/17/18, Gata.a]	5	1172.5412698412697 20.171031746031748	0.0
+[Ctnnb, Twist-r.a/b, Pem1, Fgf8/17/18, Delta.b, Gata.a]	6	154.9746031746032 0.7376984126984121	0.0
+[Ctnnb, Pem1, Fgf8/17/18, Prdm1-r.b, Delta.b, Gata.a]	6	614.7079365079367 14.004365079365083	0.0
+[Ctnnb, Foxd, Pem1, Fgf8/17/18, Delta.b, Gata.a]	6	169.47460317460317 0.38769841269841154	0.0
+[Efna.d, Fgf9/16/20, Admp, Sox4/11/12, Delta.b, Gata.a]	6	1179.327380952381 28.035714285714285	0.0
+[Ctnnb, Foxa.a, Pem1, Sox4/11/12, Gata.a, Gdf1/3-r]	6	32.928174603174604 0.9329365079365082	0.0
+[Efna.d, Fgf9/16/20, Foxa.a, Admp, Sox4/11/12, Gata.a]	6	1118.4940476190477 23.24404761904762	0.0
+[Ctnnb, Twist-r.a/b, Fgf9/16/20, Fgf8/17/18, Delta.b, Gata.a]	6	146.40317460317462 -0.8496031746031758	0.0
+[Ctnnb, Fgf9/16/20, Fgf8/17/18, Prdm1-r.b, Delta.b, Gata.a]	6	606.1365079365081 12.417063492063496	0.0
+[Ctnnb, Twist-r.a/b, Foxa.a, Pem1, Sox4/11/12, Gata.a]	6	54.38531746031748 0.29722222222222205	0.0
+[Ctnnb, Fgf9/16/20, Foxd, Fgf8/17/18, Delta.b, Gata.a]	6	160.90317460317462 -1.1996031746031754	0.0
+[Ctnnb, Foxa.a, Pem1, Sox4/11/12, Prdm1-r.b, Gata.a]	6	514.118650793651 13.563888888888894	0.0
+[Ctnnb, Foxa.a, Foxd, Pem1, Sox4/11/12, Gata.a]	6	68.88531746031747 -0.05277777777777759	0.0
+[Ctnnb, Efna.d, Foxa.a, Pem1, Sox4/11/12, Gata.a]	6	1137.2853174603174 24.397222222222222	0.0
+[Efna.d, Fgf9/16/20, Fgf8/17/18, Gata.a]	4	1152.2619047619048 19.31547619047619	0.0
+[Efna.d, Fgf9/16/20, Pem1, Sox4/11/12, Delta.b, Gata.a]	6	1188.4107142857142 28.92063492063492	0.0
+[Efna.d, Fgf9/16/20, Foxa.a, Pem1, Sox4/11/12, Gata.a]	6	1127.577380952381 24.128968253968253	0.0
