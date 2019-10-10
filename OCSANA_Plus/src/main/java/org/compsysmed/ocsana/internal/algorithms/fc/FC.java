@@ -153,31 +153,32 @@ public class FC extends AbstractFCAlgorithm {
 			//determine parent and child nodes for each node
 			ListMultimap<CyNode, CyNode> child = ArrayListMultimap.create();
 			ListMultimap<CyNode, CyNode> parent = ArrayListMultimap.create();
-			List<CyNode> self_loops = new ArrayList<CyNode>();
+			ArrayList<CyNode> self_loops = new ArrayList<CyNode>();
 			
-			ListIterator<CyEdge> listIterator = edges.listIterator(edges.size());
-			while (listIterator.hasNext()) {
-				CyEdge edge = listIterator.next();
+			//ListIterator<CyEdge> listIterator = edges.listIterator(edges.size());
+			for (CyEdge edge:edges) {
+				
 				CyNode source= edge.getSource();
 				CyNode target=edge.getTarget();
 				
 				child.put(source, target);
 				parent.put(target,source);
-				self_loops.add(source);
+				if (edge.getSource()==edge.getTarget()) {
+					self_loops.add(edge.getTarget());
+				}
 			}
+			
 			
 			int nbMvt, position_type,candidate_index,N_unnumbered,N_conflict;
 			int position;
 			int delta_move;
 			
 			
-			
-			
 			Random rando = new Random();
 			//while (looper<iter) {
 			
 			rando.setSeed(iter);
-			List<CyNode> unnumbered= new ArrayList<CyNode>();
+			ArrayList<CyNode> unnumbered= new ArrayList<CyNode>();
 			List<CyNode> S_trail_head =  new ArrayList<CyNode>();
 			List<CyNode> S_trail_tail=  new ArrayList<CyNode>();
 			List<CyNode> S_trail = new ArrayList<CyNode>();
@@ -187,13 +188,15 @@ public class FC extends AbstractFCAlgorithm {
 			ArrayList<CyNode> CV_pos = new ArrayList<CyNode>();
 			ArrayList<CyNode> CV_neg = new ArrayList<CyNode>();
 			CyNode candidate = null;
-						
-			unnumbered = new ArrayList<CyNode> (nodeList);
-			for (CyNode nunn :unnumbered) {
-				if (self_loops.contains(nunn)){
-					unnumbered.remove(nunn);
+					
+			//unnumbered = new ArrayList<CyNode> (nodeList);
+			for (CyNode nunn :nodeList) {
+				if (!self_loops.contains(nunn)){
+					unnumbered.add(nunn);
 				}
+				
 			}
+			
 			N_unnumbered = unnumbered.size();
 			
 			position=0;
