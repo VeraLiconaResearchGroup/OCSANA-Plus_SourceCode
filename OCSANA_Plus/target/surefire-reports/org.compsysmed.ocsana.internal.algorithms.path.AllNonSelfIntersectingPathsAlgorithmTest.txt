@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.compsysmed.ocsana.internal.algorithms.path.AllNonSelfIntersectingPathsAlgorithmTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.671 s - in org.compsysmed.ocsana.internal.algorithms.path.AllNonSelfIntersectingPathsAlgorithmTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.515 s - in org.compsysmed.ocsana.internal.algorithms.path.AllNonSelfIntersectingPathsAlgorithmTest
