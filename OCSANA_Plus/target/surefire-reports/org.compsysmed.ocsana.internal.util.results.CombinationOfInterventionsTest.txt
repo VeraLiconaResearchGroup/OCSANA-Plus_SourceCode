@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.compsysmed.ocsana.internal.util.results.CombinationOfInterventionsTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.compsysmed.ocsana.internal.util.results.CombinationOfInterventionsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.656 s - in org.compsysmed.ocsana.internal.util.results.CombinationOfInterventionsTest

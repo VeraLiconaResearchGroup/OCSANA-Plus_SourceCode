@@ -1,34 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
+	
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.compsysmed.ocsana</groupId>
+    <artifactId>OCSANA</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>${bundle.symbolicName}</name>
+    <packaging>bundle</packaging>
+    
     <properties>
+    	<!-- Text encoding. We need to use UTF-8 for EVERYTHING. -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- For unit testing -->
+		<junit.version>4.13</junit.version>
+		<mockito.version>3.2.4</mockito.version>
+        <!-- Felix OSGi framework version -->
+		<felix.version>5.6.10</felix.version>
         <bundle.symbolicName>OCSANA</bundle.symbolicName>
         <bundle.namespace>org.compsysmed.ocsana.internal</bundle.namespace>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cytoscape.api.version>3.6.0</cytoscape.api.version>
-        <osgi.api.version>4.3.0</osgi.api.version>
-        <junit.version>4.12</junit.version>
-        <mockito.version>1.10.19</mockito.version>
+        <cytoscape.api.version>3.8.0</cytoscape.api.version>
+        <osgi.api.version>6.0.0</osgi.api.version>
+        <osgi.compendium.version>5.0.0</osgi.compendium.version>
+        
         <slf4j.version>1.7.25</slf4j.version>
-        <maven.compiler.version>3.3</maven.compiler.version>
+        <maven.compiler.version>3.8.0</maven.compiler.version>
         <maven.jar.version>3.0.2</maven.jar.version>
-        <maven.surefire.version>2.20.1</maven.surefire.version>
+        <maven.surefire.version>3.0.0-M3</maven.surefire.version>
         <maven.javadoc.version>3.0.0</maven.javadoc.version>
-        <maven.bundle.version>3.5.0</maven.bundle.version>
+        <maven.bundle.version>4.1.0</maven.bundle.version>
+        
+        
         <ekstazi.version>5.3.0</ekstazi.version>
         <json.version>20171018</json.version>
         <la4j.version>0.6.0</la4j.version>
         <pebble.version>2.2.1</pebble.version>
     </properties>
 
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.compsysmed.ocsana</groupId>
-    <artifactId>OCSANA</artifactId>
-    <version>0.1-SNAPSHOT</version>
-
-    <name>${bundle.symbolicName}</name>
-
-    <packaging>bundle</packaging>
 
     <build>
         <resources>
@@ -117,7 +124,8 @@
             </plugin>
             
             <!-- Generates Javadocs during build -->
-            <!-- Javadocs are giving difficulties  <plugin>
+            <!-- Javadocs are giving difficulties 
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${maven.javadoc.version}</version>
@@ -134,28 +142,28 @@
                 </executions>
             </plugin>-->
             <!-- Ekstazi for incremental testing -->
-            <plugin>
+<!--            <plugin>
                 <groupId>org.ekstazi</groupId>
                 <artifactId>ekstazi-maven-plugin</artifactId>
-                <version>${ekstazi.version}</version>
+                <version>5.3.0</version>
                 <executions>
                     <execution>
                         <id>ekstazi</id>
                         <goals>
                             <goal>select</goal>
+                            <goal>restore</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
                     <forcefailing>true</forcefailing>
                 </configuration>
-            </plugin>
-            <plugin>
+            </plugin> -->
+			<plugin>
             	<groupId>org.ekstazi</groupId>
             	<artifactId>ekstazi-maven-plugin</artifactId>
             	<version>5.3.0</version>
-            </plugin>
-            
+            </plugin> 
         </plugins>
     </build>
 
@@ -191,7 +199,21 @@
             <version>${osgi.api.version}</version>
             <scope>provided</scope>
         </dependency>
-
+		<dependency>
+			  <groupId>javax.xml.bind</groupId>
+			  <artifactId>jaxb-api</artifactId>
+			  <version>2.3.0</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.sun.xml.bind</groupId>
+			  <artifactId>jaxb-core</artifactId>
+			  <version>2.3.0</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.sun.xml.bind</groupId>
+			  <artifactId>jaxb-impl</artifactId>
+			  <version>2.3.0</version>
+			</dependency>
         <dependency>
             <groupId>org.cytoscape</groupId>
             <artifactId>service-api</artifactId>
@@ -258,7 +280,7 @@
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-all</artifactId>
+            <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
