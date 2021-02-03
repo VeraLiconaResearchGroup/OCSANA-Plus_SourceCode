@@ -7,6 +7,7 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
@@ -45,7 +46,7 @@ public class FC extends AbstractFCAlgorithm {
 	    @Tunable(description = "Maximum number FVSes",
 	            gravity = 351,
 	            dependsOn = "useMaxCardinality=true")
-	   public BoundedInteger maxCardinalityBInt; 
+	   public BoundedInteger maxCardinalityBInt;
     public FC (CyNetwork network) {
     	super(network);
     	maxCardinalityBInt = new BoundedInteger(1, 15, 50, false, false);
@@ -93,11 +94,6 @@ public class FC extends AbstractFCAlgorithm {
 			looper++;
 		}
 		
-		
-		
-		
-		
-			
 			
 		
 			/*int j = 0;
@@ -142,7 +138,7 @@ public class FC extends AbstractFCAlgorithm {
 			int nbFail=0;
 			List<CyNode> nodeList = network.getNodeList();
 			List<CyEdge>edges=network.getEdgeList();
-			
+
 			int N=nodeList.size();
 			int maxMvt=5*N;
 			List<CyNode> S=new ArrayList<CyNode>();
@@ -154,7 +150,7 @@ public class FC extends AbstractFCAlgorithm {
 			ListMultimap<CyNode, CyNode> child = ArrayListMultimap.create();
 			ListMultimap<CyNode, CyNode> parent = ArrayListMultimap.create();
 			ArrayList<CyNode> self_loops = new ArrayList<CyNode>();
-			
+			ArrayList<CyNode> sink = new ArrayList<CyNode>();
 			//ListIterator<CyEdge> listIterator = edges.listIterator(edges.size());
 			for (CyEdge edge:edges) {
 				
@@ -167,7 +163,11 @@ public class FC extends AbstractFCAlgorithm {
 					self_loops.add(edge.getTarget());
 				}
 			}
-			
+			for (CyNode node:nodeList) {
+				if (network.getNeighborList(node, Type.OUTGOING).size()==0) {
+		 			sink.add(node);
+		 		}
+			}
 			
 			int nbMvt, position_type,candidate_index,N_unnumbered,N_conflict;
 			int position;
@@ -175,10 +175,10 @@ public class FC extends AbstractFCAlgorithm {
 			
 			
 			Random rando = new Random();
-			//while (looper<iter) {
 			
 			rando.setSeed(iter);
 			ArrayList<CyNode> unnumbered= new ArrayList<CyNode>();
+			
 			List<CyNode> S_trail_head =  new ArrayList<CyNode>();
 			List<CyNode> S_trail_tail=  new ArrayList<CyNode>();
 			List<CyNode> S_trail = new ArrayList<CyNode>();
@@ -189,9 +189,8 @@ public class FC extends AbstractFCAlgorithm {
 			ArrayList<CyNode> CV_neg = new ArrayList<CyNode>();
 			CyNode candidate = null;
 					
-			//unnumbered = new ArrayList<CyNode> (nodeList);
 			for (CyNode nunn :nodeList) {
-				if (!self_loops.contains(nunn)){
+				if (!self_loops.contains(nunn) | !sink.contains(nunn)){
 					unnumbered.add(nunn);
 				}
 				

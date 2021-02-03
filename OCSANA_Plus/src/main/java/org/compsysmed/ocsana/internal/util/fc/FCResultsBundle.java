@@ -22,7 +22,7 @@ public class FCResultsBundle {
    
     public void setFC (String FC) {
 
-		Objects.requireNonNull(FC, "Collection of MFRs to targets cannot be null");
+		Objects.requireNonNull(FC, "Collection of FC to targets cannot be null");
     this.FC = FC;
     }
     public Double getFCExecutionSeconds () {
@@ -46,7 +46,7 @@ public class FCResultsBundle {
    
     public void setFVS (String FVS) {
 
-		Objects.requireNonNull(FVS, "Collection of MFRs to targets cannot be null");
+		Objects.requireNonNull(FVS, "Collection of FCs to targets cannot be null");
     this.FVS = FVS;
     }
 }

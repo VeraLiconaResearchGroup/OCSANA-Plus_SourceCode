@@ -75,22 +75,35 @@ public class FCAlgorithmTask extends AbstractFCTask {
         taskMonitor.setTitle(String.format("running FC"));
         Map<String, List<CyNode>> FC = fcBundle.getFCAlgorithm().FVS();
         taskMonitor.setTitle(String.format("formatting output"));
-        FVS=FC.get("fvsnodes");
         List<CyNode> sourcenodes = FC.get("sourcenodes");
         String FC_string = "Source Nodes: ";
         for (CyNode node:sourcenodes) {
      	   String nodename=fcBundle.getNodeName(node);
      	   FC_string=FC_string+nodename+"\t";
         }
-        
+
         int numberFVS=FC.size();
-        for (int i = 1;i<numberFVS;i++) {
-        	FC_string = FC_string+"\nFVS_"+String.valueOf(i)+": ";
-        	FVS=FC.get("FVS_"+String.valueOf(i));
-        	for (CyNode node:FVS) {
-            	String nodename = fcBundle.getNodeName(node);
-            	FC_string=FC_string+nodename+"\t";
-            }
+        if (numberFVS<3) {
+        	FVS=FC.get("FVS_1");
+        	if ((FVS).size()==0) {
+        		FC_string=FC_string+"\nno FVSes identified";	
+        	}else {
+        		FC_string = FC_string+"\nFVS_1: ";
+        		for (CyNode node:FVS) {
+	            	String nodename = fcBundle.getNodeName(node);
+	            	FC_string=FC_string+nodename+"\t";
+	            }	
+        	}
+        	
+        } else {
+	        for (int i = 1;i<numberFVS;i++) {
+	        	FC_string = FC_string+"\nFVS_"+String.valueOf(i)+": ";
+	        	FVS=FC.get("FVS_"+String.valueOf(i));
+	        	for (CyNode node:FVS) {
+	            	String nodename = fcBundle.getNodeName(node);
+	            	FC_string=FC_string+nodename+"\t";
+	            }
+        }
         }
         
         fcresultsBundle.setFC(FC_string);
