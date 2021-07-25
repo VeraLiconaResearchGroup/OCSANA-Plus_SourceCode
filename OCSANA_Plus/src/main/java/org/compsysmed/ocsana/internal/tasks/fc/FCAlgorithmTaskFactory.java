@@ -31,31 +31,31 @@ import org.compsysmed.ocsana.internal.util.sfa.SFAResultsBundle;
 
 public class FCAlgorithmTaskFactory
     extends AbstractTaskFactory {
-    private final FCRunnerTask fcRunnerTask;
-    private final FCBundle fcBundle;
-    private final FCResultsBundle fcresultsBundle;
-
-    public  FCAlgorithmTaskFactory (FCRunnerTask fcRunnerTask, 
-                                            FCBundle fcBundle,
-                                            FCResultsBundle fcresultsBundle) {
-        super();
-
-        Objects.requireNonNull(fcRunnerTask, "Runner task cannot be null");
-        this.fcRunnerTask = fcRunnerTask;
-
-        Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
-        this.fcBundle = fcBundle;
-
-        Objects.requireNonNull(fcresultsBundle, "Context results cannot be null");
-        this.fcresultsBundle = fcresultsBundle;
-
-       
-    }
-
-    @Override
-    public TaskIterator createTaskIterator () {
-        TaskIterator tasks = new TaskIterator();
-        tasks.append(new FCAlgorithmTask(fcRunnerTask, fcBundle, fcresultsBundle));
-        return tasks;
-    }
+	    private final FCRunnerTask fcRunnerTask;
+	    private final FCBundle fcBundle;
+	    private final FCResultsBundle fcresultsBundle;
+	
+	    public  FCAlgorithmTaskFactory (FCRunnerTask fcRunnerTask, 
+	                                            FCBundle fcBundle,
+	                                            FCResultsBundle fcresultsBundle) {
+	        super();
+	
+	        Objects.requireNonNull(fcRunnerTask, "Runner task cannot be null");
+	        this.fcRunnerTask = fcRunnerTask;
+	
+	        Objects.requireNonNull(fcBundle, "Context bundle cannot be null");
+	        this.fcBundle = fcBundle;
+	
+	        Objects.requireNonNull(fcresultsBundle, "Context results cannot be null");
+	        this.fcresultsBundle = fcresultsBundle;
+	
+	       
+	    }
+	
+	    @Override
+	    public TaskIterator createTaskIterator () {
+	        TaskIterator tasks = new TaskIterator();
+	        tasks.append(new FCAlgorithmTask(fcRunnerTask, fcBundle, fcresultsBundle));
+	        return tasks;
+	    }
 }

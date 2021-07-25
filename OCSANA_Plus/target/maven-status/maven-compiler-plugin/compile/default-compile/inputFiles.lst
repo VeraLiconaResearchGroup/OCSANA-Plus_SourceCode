@@ -21,6 +21,7 @@
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/SFAStep.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/fc/FCAlgorithmTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/FVSStep.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/hello/ReturnAValueTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/results/OCSANAResultsPanel.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/science/FDACategory.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/path/PathFindingAlgorithmTaskFactory.java
@@ -29,6 +30,7 @@
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/results/OCSANAScores.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/AbstractFVSTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/algorithms/sfa/SFA.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/fc/FCAlgorithmTaskFactoryAuto.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/runner/RunnerTaskFactory.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/AbstractOCSANATask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/algorithms/mhs/RSAlgorithm.java
@@ -36,6 +38,7 @@
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/fvs/FVSwindow.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/results/ResultsReportManager.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/fc/FCResultsBundle.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/hello/SayHelloTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/OCSANAStep.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/algorithms/mhs/OCSANAGreedyAlgorithm.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/fc/FCRunnerTask.java
@@ -48,6 +51,7 @@
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/AbstractFCTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/sfa/PresentResultsSFATaskFactory.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/science/uniprot/ProteinDatabase.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/sfa/SFATaskAuto.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/scoring/OCSANAScoringTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/fc/FCBundleBuilder.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/algorithms/path/ShortestPathsAlgorithm.java
@@ -61,6 +65,7 @@
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/sfa/SFAmenu.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/mhs/MHSAlgorithmTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/sfa/PresentSFAResultsTask.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/fc/FCAlgorithmTaskAuto.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/science/InteractionSign.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/results/CombinationOfInterventions.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/sfa/SFARunnerTaskFactory.java
@@ -71,9 +76,12 @@
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/util/tunables/NodeHandler.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/fc/subpanels/FCNetworkConfigurationSubpanel.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/results/subpanels/CIListSubpanel.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/hello/SayHelloTaskFactory.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/control/subpanels/PathFindingSubpanel.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/control/widgets/ListNodeSetSelecter.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/sfa/SFAAutoTaskFactory.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/fvs/FVSmenu.java
+/Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/tasks/hello/ReturnAValueTaskFactory.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/algorithms/scoring/OCSANAScoringAlgorithm.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/algorithms/mhs/SHDRecursiveTask.java
 /Users/laurenmarazzi/git/OCSANA-Plus_SourceCode/OCSANA_Plus/src/main/java/org/compsysmed/ocsana/internal/ui/sfa/SFAwindow.java

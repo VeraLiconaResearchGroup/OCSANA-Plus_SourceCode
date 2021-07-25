@@ -41,10 +41,7 @@ public class ResultsBundle {
     private Collection<CombinationOfInterventions> CIs;
     private Double mhsExecutionSeconds;
     private Boolean mhsFindingCanceled = false;
-    // FC data
-    private String FVS;
-    private Double FCExecutionSeconds;
-    private Boolean FCCanceled = false;
+
     
    
     public Collection<List<CyEdge>> getPathsToTargets () {

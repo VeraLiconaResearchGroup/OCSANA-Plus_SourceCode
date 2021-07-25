@@ -15,8 +15,10 @@ import java.net.URISyntaxException;
 // Java imports
 import java.util.*;
 
+import org.cytoscape.work.ProvidesTitle;
 // Cytoscape imports
 import org.cytoscape.work.TaskMonitor;
+import org.cytoscape.work.Tunable;
 import org.lappsgrid.pycaller.PyCallerException;
 import org.cytoscape.model.CyNode;
 import org.cytoscape.model.CyEdge;
