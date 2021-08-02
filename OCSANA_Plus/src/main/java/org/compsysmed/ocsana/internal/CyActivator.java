@@ -54,8 +54,7 @@ import org.compsysmed.ocsana.internal.ui.fc.FCmenu;
 import org.compsysmed.ocsana.internal.algorithms.fc.AbstractFCAlgorithm;
 import org.compsysmed.ocsana.internal.tasks.fc.FCAlgorithmTaskFactory;
 import org.compsysmed.ocsana.internal.tasks.fc.FCAlgorithmTaskFactoryAuto;
-import org.compsysmed.ocsana.internal.tasks.hello.ReturnAValueTaskFactory;
-import org.compsysmed.ocsana.internal.tasks.hello.SayHelloTaskFactory;
+
 import org.compsysmed.ocsana.internal.tasks.sfa.SFAAutoTaskFactory;
 import org.compsysmed.ocsana.internal.ui.fvs.FVSmenu;
 import org.compsysmed.ocsana.internal.ui.results.OCSANAResultsPanel;
@@ -110,36 +109,7 @@ public class CyActivator extends AbstractCyActivator {
         
         SFAmenu sfamenu = new SFAmenu(cyApplicationManager,cySwingApplication,sfaresultsPanel,panelTaskManager);	
         	registerService(bc,sfamenu,CyAction.class, new Properties());
-        
-        //automation functions
-    	String returnAValueDescription = "Add two numbers (a and b) and return their value using ObservableTask.";
-		
-		Properties returnAValueTaskFactoryProperties = new Properties();
-		returnAValueTaskFactoryProperties.setProperty(COMMAND_NAMESPACE, "ocsanaplus");
-		returnAValueTaskFactoryProperties.setProperty(COMMAND, "return_a_value");
-		returnAValueTaskFactoryProperties.setProperty(COMMAND_DESCRIPTION,  returnAValueDescription);
-		returnAValueTaskFactoryProperties.setProperty(PREFERRED_MENU, "ocsanaplus");
-		returnAValueTaskFactoryProperties.setProperty(IN_MENU_BAR, "false");
-		returnAValueTaskFactoryProperties.setProperty(IN_CONTEXT_MENU, "false");
-		returnAValueTaskFactoryProperties.setProperty(TOOLTIP,  returnAValueDescription);
 
-		TaskFactory returnAValueTaskFactory = new ReturnAValueTaskFactory();
-		registerAllServices(bc, returnAValueTaskFactory, returnAValueTaskFactoryProperties);
-    		
-    	String sayHelloDescription = "Say hello to the someone by name using the Task Monitor.";
-		
-		Properties sayHelloTaskFactoryProperties = new Properties();
-		sayHelloTaskFactoryProperties.setProperty(COMMAND_NAMESPACE, "ocsanaplus");
-		sayHelloTaskFactoryProperties.setProperty(COMMAND, "say_hello");
-		sayHelloTaskFactoryProperties.setProperty(COMMAND_DESCRIPTION, sayHelloDescription);
-		sayHelloTaskFactoryProperties.setProperty(PREFERRED_MENU, "ocsanaplus");
-		sayHelloTaskFactoryProperties.setProperty(IN_MENU_BAR, "false");
-		sayHelloTaskFactoryProperties.setProperty(IN_CONTEXT_MENU, "false");
-
-
-		TaskFactory pauseCommandFactory = new SayHelloTaskFactory();
-		registerAllServices(bc, pauseCommandFactory, sayHelloTaskFactoryProperties);
-		
 		String FCDescription = "run FC finding.";
 		
 		Properties FCTaskFactoryProperties = new Properties();
