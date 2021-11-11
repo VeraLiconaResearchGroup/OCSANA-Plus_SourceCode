@@ -12,7 +12,7 @@
     	<!-- Text encoding. We need to use UTF-8 for EVERYTHING. -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- For unit testing -->
-		<junit.version>4.13</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<mockito.version>3.2.4</mockito.version>
         <!-- Felix OSGi framework version -->
 		<felix.version>5.6.10</felix.version>
